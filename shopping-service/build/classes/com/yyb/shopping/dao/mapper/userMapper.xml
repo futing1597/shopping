@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyb.shopping.dao.UserDao">
+
+	<insert id="addUser" parameterType="com.yyb.shopping.model.UserModel" 
+		useGeneratedKeys="true" keyProperty="userModel.userId">
+		insert into 
+			yyb_user_t
+			  (
+				userName,
+				password,
+				email,
+				role,
+				tel,
+				pwdNo,
+				pwdAnswer,
+				status,
+				create_by,
+				create_date,
+				last_update_by,
+				last_update_date)
+		    values(
+		    	#{userModel.userName},
+		    	#{userModel.password},
+		    	#{userModel.email},
+		    	#{userModel.role},
+		    	#{userModel.tel},
+		    	#{userModel.pwdNo},
+		    	#{userModel.pwdAnswer},
+		    	1,
+		    	'',
+		    	now(),
+		    	'',
+		    	now()
+		    )
+	</insert>
+</mapper>

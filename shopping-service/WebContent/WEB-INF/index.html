@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 在IE运行最新的渲染模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 初始化移动浏览显示 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bin</title>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+</head>
+<body ng-app="myApp">
+	<div ng-controller="TextController">
+		<p>{{someText}}</p>
+	</div>
+	
+	
+	<div ng-view></div>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/angular-route.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<script src="./js/routeConfig.js"></script>
+	<script src="./html/email/email.js"></script>
+</body>
+</html>

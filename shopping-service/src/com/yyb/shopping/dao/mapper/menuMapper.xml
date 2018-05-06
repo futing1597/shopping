@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyb.shopping.dao.MenuDao">
+
+	<select id="searchAllMenu" resultType="java.util.Map">
+		select 
+			id,
+			parent_menu_id,
+			is_leaf,
+			name_zh_CN
+		from 
+			yyb_menu_tree_t
+		where
+			status = '1'	 
+	</select>
+
+	<select id="searchAllRootMenu" resultType="java.util.Map">
+		select 
+			id,
+			parent_menu_id,
+			is_leaf,
+			name_zh_CN
+		from 
+			yyb_menu_tree_t
+		where
+			parent_menu_id = '0' and status = '1'	 
+	</select>
+	
+	<select id="searchAllMenuChildListById" resultType="java.util.Map">
+		select 
+			id,
+			parent_menu_id,
+			is_leaf,
+			name_zh_CN
+		from 
+			yyb_menu_tree_t
+		where
+			id like concat(#{menuId}, '%')  and status = '1'	 
+	</select>
+	
+	<select id="searchMenuChildListById" resultType="java.util.Map">
+		select 
+			id,
+			parent_menu_id,
+			is_leaf,
+			name_zh_CN
+		from 
+			yyb_menu_tree_t
+		where
+			parent_menu_id = #{menuId}  and status = '1'	 
+	</select>
+	
+</mapper>

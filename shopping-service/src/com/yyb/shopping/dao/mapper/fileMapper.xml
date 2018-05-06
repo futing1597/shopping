@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyb.shopping.dao.FileDao">
+
+	<insert id="insertFile">
+	
+		insert into 
+			yyb_file_t(
+				src_file_name,
+				uuid_name,
+				file_path,
+				status,
+				create_by,
+				create_date,
+				last_update_by,
+				last_update_date
+			)
+				
+		values 
+			(
+				#{srcFileName},
+				#{uuidName},
+				#{filePath},
+				1,
+				'yuyubing',
+				now(),
+				'yuyubing',
+				now()
+			)
+	
+	</insert>
+	
+</mapper>
